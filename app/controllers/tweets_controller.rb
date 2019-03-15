@@ -2,9 +2,13 @@ class TweetsController < ApplicationController
 
 
     get '/tweets' do
-    @tweets = Tweet.all 
-    erb :'tweets/tweets'
-end  
+        if logged_in?
+        @tweets = Tweet.all 
+        erb :'tweets/tweets'
+        else 
+         redirect to    '/signin'  
+        end
+    end  
     
 
 get '/tweets/new' do
@@ -24,7 +28,7 @@ end
 
 get '/tweets/:id/edit' do
     @tweet = Tweet.find_by(params[:id])
-    binding.pry  
+    #binding.pry  
     erb :'tweets/edit_tweet'
 end 
 
