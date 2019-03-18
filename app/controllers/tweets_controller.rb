@@ -67,18 +67,18 @@ patch '/tweets/:id' do
 
     redirect "/tweets/#{var.id}"
     end 
-
+    end 
     delete '/tweets/:id'  do 
 
         var = Tweet.find(params[:id])
-        binding.pry
+        #binding.pry
         if logged_in? &&  current_user[:id] == var.user_id
         var.delete
         redirect "/tweets"
         else 
             redirect "/login" 
         end
-    end
+    
 
 end
 
