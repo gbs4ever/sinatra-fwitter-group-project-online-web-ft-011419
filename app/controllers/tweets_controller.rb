@@ -36,7 +36,8 @@ end
 
 get '/tweets/:id' do 
     if logged_in?
-   @tweet = Tweet.find_by(params[:id])
+   @tweet = Tweet.find(params[:id])
+  
     erb :'/tweets/show_tweet'  
     else
         redirect "/login"  
@@ -68,9 +69,9 @@ patch '/tweets/:id' do
     end 
 
     delete '/tweets/:id'  do 
-       binding.pry
+
         var = Tweet.find(params[:id])
-        
+        binding.pry
         if logged_in? &&  current_user[:id] == var.user_id
         var.delete
         redirect "/tweets"
