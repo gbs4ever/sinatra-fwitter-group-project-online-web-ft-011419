@@ -70,7 +70,7 @@ patch '/tweets/:id' do
     end
 
 
-    delete '/tweets/:id'  do 
+    delete '/tweets/:id'  do
 
         var = Tweet.find(params[:id])
         binding.pry
