@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 tweeting!
 
-<%=@tweet.content%> 
+<%=@tweet.content%>
 
 
 <form action="/tweets/<%=@tweet.id%>" method="POST">
@@ -14,25 +14,5 @@ tweeting!
 
 
 
-<a href='/tweets/<%=@tweet.id%>/edit'>Edit Tweet</a> 
-<br>
-
-
- 
-=======
-tweeting!
-
-<%=@tweet.content%>
-
 <a href='/tweets/<%=@tweet.id%>/edit'>Edit Tweet</a>
 <br>
-
-
-
-
-
-<form method="post" action='/tweets/<%=@tweet.id%>'>
-<input id="hidden" type="hidden" name= "_method" value="DELETE">
-<input type= "submit" value="Delete Tweet">
-</form>
->>>>>>> d85312a3b3534a171b8d48706a00ddc5660efc02
